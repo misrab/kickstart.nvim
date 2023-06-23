@@ -35,6 +35,13 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now :)
 --]]
+
+
+-- Misrab custom stuff top
+
+
+
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -131,10 +138,12 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- 'navarasu/onedark.nvim',
+    'sainnhe/gruvbox-material',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.opt.termguicolors = true 
+      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 
@@ -145,7 +154,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'gruvbox-material',
         component_separators = '|',
         section_separators = '',
       },
@@ -204,6 +213,15 @@ require('lazy').setup({
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
 }, {})
+
+
+-- Misrab package configuration
+-- require('onedark').setup  {
+--   -- Main options --
+--   style = 'cool',
+-- }
+
+
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -513,3 +531,6 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+
+
